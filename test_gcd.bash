@@ -27,7 +27,7 @@ diff $tmp-ans $tmp-out || ERROR_EXIT "TEST3-2"
 [ $? -eq 0 ] || ERROR_EXIT "TEST4-1" 
 
 ##################################### # TEST5 #####################################
-./gcd.bash 10 0 1000 > $tmp-out 2&>1
+./gcd.bash 10 0 1000 > $tmp-out 2>&1
 [ $? -ne 0 ] || ERROR_EXIT "TEST5-1"
 
 echo OK
