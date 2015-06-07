@@ -4,3 +4,4 @@ python:
   - "2.6"
 script: 
   - bash -e ./test.bash
+  - bash -e ./test_gcd.bash
