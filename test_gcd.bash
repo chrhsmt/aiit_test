@@ -22,6 +22,7 @@ echo 2 > $tmp-ans
 ./gcd.bash 128 198 > $tmp-out || ERROR_EXIT "TEST3-1"
 diff $tmp-ans $tmp-out || ERROR_EXIT "TEST3-2"
 
+set +e
 ##################################### # TEST4 #####################################
 ./gcd.bash 10 100 > $tmp-out
 [ $? -eq 0 ] || ERROR_EXIT "TEST4-1" 
