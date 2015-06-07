@@ -1,7 +1,206 @@
+language: generic
+#!/bin/bash
+#!/usr/bin/python
+Last login: Sun Jun  7 18:04:04 on ttys000
+Now using node v0.11.13
+#!/usr/bin/python
+chihiro-no-MacBook-Air-2:~ chihiro$ cd git/
+chihiro-no-MacBook-Air-2:git chihiro$ git clone git@github.com:chrhsmt/aiit_test.git
+Cloning into 'aiit_test'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+chihiro-no-MacBook-Air-2:git chihiro$
+#!/bin/bash
+chihiro-no-MacBook-Air-2:git chihiro$ cd aiit_test/
+#!/bin/bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ll
+total 0
+drwxr-xr-x   3 chihiro  staff   102  6  7 18:20 .
+drwxrwxr-x  38 chihiro  staff  1292  6  7 18:20 ..
+drwxr-xr-x   9 chihiro  staff   306  6  7 18:20 .git
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim .travis.yml
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim test.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git add .
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git commit -m "add test"
+[master (root-commit) 250181d] add test
+ 2 files changed, 7 insertions(+)
+ create mode 100644 .travis.yml
+ create mode 100644 test.bash
+(reverse-i-search)`push': git push heroku master
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git push origin master
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 330 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To git@github.com:chrhsmt/aiit_test.git
+ * [new branch]      master -> master
+Merge branch 'master' of github.com:chrhsmt/aiit_test
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim same.py
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ /usr/bin/python
+Python 2.7.5 (default, Mar  9 2014, 22:15:05)
+[GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> ^D
+chihiro-no-MacBook-Air-2:aiit_test chihiro$
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim same.py
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ chmod +x same.py
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ./same.py aaa nnn
+aaa nnn NG
 language: python
-python:
-  - "2.7"
-  - "2.6"
-script: 
-  - bash -e ./test.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ./same.py aaa aaa
+aaa aaa OK
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim test.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim test.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git add .
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git commit -m "add"
+[master 512eeeb] add
+ 2 files changed, 27 insertions(+), 1 deletion(-)
+ create mode 100755 same.py
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git push origin master
+To git@github.com:chrhsmt/aiit_test.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:chrhsmt/aiit_test.git'
+#!/bin/bash
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+#!/bin/bash
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git pull origin master
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:chrhsmt/aiit_test
+ * branch            master     -> FETCH_HEAD
+   250181d..c9b11d1  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git push origin master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 813 bytes | 0 bytes/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+To git@github.com:chrhsmt/aiit_test.git
+   c9b11d1..f74e4db  master -> master
+#!/bin/bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim .travis.yml
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git add .
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git commit -m "change travis.yml"
+[master a46005c] change travis.yml
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 407 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:chrhsmt/aiit_test.git
+   f74e4db..a46005c  master -> master
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim gcd.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ chmod +x gcd.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim test_gcd.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ cat test.bash
+#!/bin/bash
+
+#!/bin/bash
+tmp=/tmp/$$
+ERROR_EXIT () {
+  echo "$1" >&2
+  rm -f $tmp-*
+  exit 1
+}
+
+#!/bin/bash
+##################################### # TEST1 #####################################
+echo aaa bbb NG > $tmp-ans
+./same.py aaa bbb > $tmp-out || ERROR_EXIT "TEST1-1"
+diff $tmp-ans $tmp-out || ERROR_EXIT "TEST1-2"
+
+echo OK
+
+#!/bin/bash
+rm -f $tmp-*
+
+exit 0
+
+
+#!/bin/bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim test_gcd.bash
+.chihiro-no-MacBook-Air-2:aiit_test chihiro$ chmod +X test_gcd.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ./te
+-bash: ./te: No such file or directory
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ./tes
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ll
+total 48
+drwxr-xr-x   9 chihiro  staff   306  6  7 18:41 .
+drwxrwxr-x  38 chihiro  staff  1292  6  7 18:20 ..
+drwxr-xr-x  14 chihiro  staff   476  6  7 18:35 .git
+-rw-r--r--   1 chihiro  staff    78  6  7 18:35 .travis.yml
+-rw-r--r--   1 chihiro  staff    16  6  7 18:34 README.md
+-rwxr-xr-x   1 chihiro  staff   647  6  7 18:39 gcd.bash
+-rwxr-xr-x   1 chihiro  staff   123  6  7 18:29 same.py
+-rw-r--r--   1 chihiro  staff   328  6  7 18:33 test.bash
+-rw-r--r--   1 chihiro  staff   318  6  7 18:41 test_gcd.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ chmod +x test_gcd.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ./test_gcd.bash
+OK
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim test_gcd.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ./test_gcd.bash
+1c1
+< 32
+---
+> 2
+TEST1-2
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim test_gcd.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ./test_gcd.bash
+1c1
+< 32
+---
+> 2
+#!/bin/bash
+TEST3-2
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim test_gcd.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ./test_gcd.bash
+OK
+#!/bin/bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$
+chihiro-no-MacBook-Air-2:aiit_test chihiro$
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ vim test_gcd.bash
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ echo $!
+#!/bin/bash
+
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ echo $$$
+2129$
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ echo $$
+#!/bin/bash
+2129
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ echo $-
+himBH
+language: python
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ aaa
+-bash: aaa: command not found
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ echo $!
+
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ echo $&
+[1] 2392
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ $
+
+[1]+  Done                    echo $
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ echo $%
+$%
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ echo $#
+0
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ ddd
+-bash: ddd: command not found
+chihiro-no-MacBook-Air-2:aiit_test chihiro$ echo $#
+language: generic
+script:
   - bash -e ./test_gcd.bash
